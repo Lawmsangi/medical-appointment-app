@@ -1,0 +1,48 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100vh;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.doctors-card {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-lists {
+  display: flex;
+  gap: 10px;
+    padding-inline-start: 0;
+    list-style: none;
+}
+
+.image-lists li {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-lists li span {
+    font-size: 1.1rem;
+    color: #454545;
+}
+
+.image-lists li p {
+    font-size: 0.7rem;
+    color: #454545;
+}
+
+.next-icon {
+    font-size: 2.3rem;
+    cursor: pointer;
+}
+
+img {
+    border-radius: 50%;
+    height: 200px;
+    width: 190px;
+}
