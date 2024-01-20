@@ -6,6 +6,7 @@ import doctor4 from '../assests/doctor-4.jpg'
 import doctor5 from '../assests/doctor-5.jpg'
 import '../styles/Home.css'
 import { MdNavigateNext } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const doctors =[
@@ -30,6 +31,11 @@ function Home() {
         }
     };
 
+  const navigate = useNavigate();
+  const handleAppointmentClick = () => {
+    navigate('/appointment'); 
+  };
+
   return (
     <div className='home'>
         <h1>Find Your Specialist Doctor</h1>
@@ -39,9 +45,10 @@ function Home() {
             <div className="doctor-card" key={index}>
                 <img src={doctor.image} alt="image" />
                 <div className="doctor-info">
-                <h3>{doctor.name}</h3>
-                <p>{doctor.speciality}</p>
+                  <h3>{doctor.name}</h3>
+                  <p>{doctor.speciality}</p>
                 </div>
+                <button className='book-btn' onClick={handleAppointmentClick}>Make appointment</button>
             </div>
             ))}
             <MdNavigateNext className="next-icon" onClick={handleNextClick} />
