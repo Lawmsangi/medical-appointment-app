@@ -20,22 +20,22 @@ const Navbar = () => {
         </div>
         <ul className='nav-categories'>
             <li>
-                <NavLink className="icon-link">
+                <NavLink to="/" className="icon-link" >
                     <FaUserDoctor /> Doctors
                 </NavLink>
             </li>
             <li>
-                <NavLink className="icon-link">
+                <NavLink to="/category" className="icon-link">
                     <BiCategory />Category
                 </NavLink>
             </li>
             <li>
-                <NavLink className="icon-link">
+                <NavLink to="/appointment" className="icon-link">
                     <MdOutlineMedicalServices />My Appointments
                 </NavLink>
             </li>
             <li>
-                <NavLink className="icon-link">
+                <NavLink to="/makeappointment" className="icon-link">
                     <FaPlus />Book Appointment
                 </NavLink>
             </li>
