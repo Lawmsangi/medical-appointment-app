@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <div className='navbar'>
         <div className="nav-header">
-            <h1 className='color-green'>Navbar</h1>
+            <h1 className='color-blue'>HealHub</h1>
         </div>
         <ul className='nav-categories'>
             <li>
