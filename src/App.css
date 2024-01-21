@@ -2,15 +2,15 @@
   box-sizing: border-box;
   margin: 0;
   text-decoration: none;
-  overflow: hidden;
 }
 
-.color-green {
-  color: #98BF0C;
+.color-blue {
+  color: #41BA8D;
 }
 
 body {
   height: 100vh;
+  font-family: "Cambria", sans-serif;
 }
 
 a {

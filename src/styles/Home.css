@@ -12,6 +12,7 @@
     gap: 10px;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .image-lists {
@@ -41,25 +42,9 @@
     cursor: pointer;
 }
 
-img {
+.doctor-card img {
     border-radius: 50%;
     height: 200px;
     width: 190px;
 }
 
-button {
-    border: none;
-}
-
-.book-btn {
-    background-color: #1CC7C1;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.book-btn:hover {
-    background-color: #38ada1;
-}

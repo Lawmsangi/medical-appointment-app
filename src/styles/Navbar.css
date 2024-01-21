@@ -34,7 +34,7 @@
 }
 
 .nav-categories li:hover {
-    background-color: #98BF0C;
+    background-color: #41BA8D;
     cursor: pointer;
     border: 10px;
 }
@@ -77,11 +77,11 @@
 .icon-link {
     display: flex;
     gap: 15px;
-    color: #454545;
+    color: #41BA8D;
 }
 
 @media only screen and (max-width: 768px) {
    .navbar {
-      visibility: hidden;
+      display: none;
    }
 }
