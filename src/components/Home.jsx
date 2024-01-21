@@ -32,8 +32,8 @@ function Home() {
     };
 
   const navigate = useNavigate();
-  const handleAppointmentClick = () => {
-    navigate('/appointment'); 
+  const handleAppointmentClick = (doctor) => {
+    navigate('/makeappointment',{ state: { doctor } }); 
   };
 
   return (
@@ -42,13 +42,13 @@ function Home() {
         <p>Book an appointment with a doctor near you.</p>
         <div className="doctors-card">
            {doctors.slice(currentPage * doctorsPerPage, (currentPage + 1) * doctorsPerPage).map((doctor, index) => (
-            <div className="doctor-card" key={index}>
+            <div className="doctor-card" key={index}  onClick={() => handleAppointmentClick(doctor)}>
                 <img src={doctor.image} alt="image" />
                 <div className="doctor-info">
                   <h3>{doctor.name}</h3>
                   <p>{doctor.speciality}</p>
                 </div>
-                <button className='book-btn' onClick={handleAppointmentClick}>Make appointment</button>
+                
             </div>
             ))}
             <MdNavigateNext className="next-icon" onClick={handleNextClick} />
