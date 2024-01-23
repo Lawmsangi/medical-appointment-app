@@ -1,6 +1,7 @@
 .categories {
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 
 .categories h1 {
@@ -9,9 +10,8 @@
 
 .categories-lists {
     display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        /* Two columns with equal width */
-        gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     margin-top: 60px;
 }
 

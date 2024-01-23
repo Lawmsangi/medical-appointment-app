@@ -3,6 +3,7 @@
     flex-direction: column;
    gap: 40px;
    color: #434444;
+   padding: 20px;
 }
 
 .make-appointment h1 {
