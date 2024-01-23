@@ -7,8 +7,10 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import TimePicker from 'react-time-picker';
 import 'react-time-picker/dist/TimePicker.css';
+import { useDispatch } from 'react-redux';
+import { addAppointment } from '../redux/appointmentsSlice';
 
-function MakeAppointment(props) {
+function MakeAppointment() {
   const location = useLocation();
   const { state } = location;
   const doctor = state ? state.doctor : null;
@@ -23,14 +25,7 @@ function MakeAppointment(props) {
     setSelectedTime(time);
   };
 
-  if (!doctor) {
-    return (
-      <div>
-        <h1>MakeAppointment</h1>
-        <p>No doctor information available.</p>
-      </div>
-    );
-  }
+  const dispatch = useDispatch();
 
   return (
     <div className='make-appointment'>
@@ -50,7 +45,7 @@ function MakeAppointment(props) {
       </div>
       <div className="biography">
         <h4>Biography</h4>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur incidunt ratione vero accusantium illum porro maxime sunt inventore, ducimus doloremque?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae minus nihil voluptatem impedit dolorum amet similique minima cupiditate consequatur quod.</p>
+        <p>{doctor.biography}</p>
       </div>
 
       <div className="schedules">
@@ -73,7 +68,16 @@ function MakeAppointment(props) {
             />
           </div>
         </div>
-      <button className='book-btn'>Book An Appointment</button>
+      <button className='book-btn' onClick={()=>dispatch(addAppointment({
+        id: Math.floor(Math.random() * 1000) + 1,
+        doctor: doctor.name,
+        image: doctor.image,
+        date: JSON.stringify(selectedDate),
+        time: selectedTime,
+      }))}
+      >
+        Book An Appointment
+      </button>
     </div>
   );
 }
