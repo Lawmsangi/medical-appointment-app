@@ -9,8 +9,6 @@ import { FaPinterestP } from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
 import { BiCategory } from "react-icons/bi";
 import { MdOutlineMedicalServices } from "react-icons/md";
-import { FaMinus } from "react-icons/fa";
-import { FaPlus } from "react-icons/fa6";
 
 const Navbar = () => {
   return (
@@ -32,16 +30,6 @@ const Navbar = () => {
             <li>
                 <NavLink to="/appointment" className="icon-link">
                     <MdOutlineMedicalServices />My Appointments
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to="/makeappointment" className="icon-link">
-                    <FaPlus />Book Appointment
-                </NavLink>
-            </li>
-            <li>
-                <NavLink className="icon-link">
-                    <FaMinus />Remove Appointment
                 </NavLink>
             </li>
         </ul>
