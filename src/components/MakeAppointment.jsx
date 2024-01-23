@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import '../styles/MakeAppointment.css';
 import { IoCall } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
@@ -26,6 +26,23 @@ function MakeAppointment() {
   };
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+   const handleBookAppointment = () => {
+    const newAppointment = {
+      id: Math.floor(Math.random() * 1000) + 1,
+      doctor: doctor.name,
+      image: doctor.image,
+      date: JSON.stringify(selectedDate),
+      time: selectedTime,
+    };
+
+    // Dispatch action to add the appointment
+    dispatch(addAppointment(newAppointment));
+
+    // Redirect to the congratulations page
+    navigate('/thankyou');
+  };
 
   return (
     <div className='make-appointment'>
@@ -68,14 +85,7 @@ function MakeAppointment() {
             />
           </div>
         </div>
-      <button className='book-btn' onClick={()=>dispatch(addAppointment({
-        id: Math.floor(Math.random() * 1000) + 1,
-        doctor: doctor.name,
-        image: doctor.image,
-        date: JSON.stringify(selectedDate),
-        time: selectedTime,
-      }))}
-      >
+      <button className='book-btn' onClick={handleBookAppointment}>
         Book An Appointment
       </button>
     </div>
