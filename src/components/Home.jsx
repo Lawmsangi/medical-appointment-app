@@ -10,11 +10,11 @@ import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const doctors =[
-    {name:'Dr. Peter Khan',speciality:'Brain Surgeon',image:doctor1},
-    {name:'Dr. Peter Khan',speciality:'Brain Surgeon',image:doctor2},
-    {name:'Dr. Peter Khan',speciality:'Brain Surgeon',image:doctor3},
-    {name:'Dr. Peter Khan',speciality:'Brain Surgeon',image:doctor4},
-    {name:'Dr. Peter Khan',speciality:'Brain Surgeon',image:doctor5}
+    {name:'Dr. Peter Khan',speciality:'Brain Surgeon',image:doctor1, biography:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur incidunt ratione vero accusantium illum porro maxime sunt inventore, ducimus doloremque?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae minus nihil voluptatem impedit dolorum amet similique minima cupiditate consequatur quod.'},
+    {name:'Dr. Peter Khan',speciality:'Brain Surgeon',image:doctor2, biography:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur incidunt ratione vero accusantium illum porro maxime sunt inventore, ducimus doloremque?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae minus nihil voluptatem impedit dolorum amet similique minima cupiditate consequatur quod.'},
+    {name:'Dr. Peter Khan',speciality:'Brain Surgeon',image:doctor3, biography:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur incidunt ratione vero accusantium illum porro maxime sunt inventore, ducimus doloremque?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae minus nihil voluptatem impedit dolorum amet similique minima cupiditate consequatur quod.'},
+    {name:'Dr. Peter Khan',speciality:'Brain Surgeon',image:doctor4, biography:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur incidunt ratione vero accusantium illum porro maxime sunt inventore, ducimus doloremque?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae minus nihil voluptatem impedit dolorum amet similique minima cupiditate consequatur quod.'},
+    {name:'Dr. Peter Khan',speciality:'Brain Surgeon',image:doctor5, biography:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur incidunt ratione vero accusantium illum porro maxime sunt inventore, ducimus doloremque?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae minus nihil voluptatem impedit dolorum amet similique minima cupiditate consequatur quod.'}
   ];
 
   const doctorsPerPage = 3;
