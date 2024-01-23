@@ -5,6 +5,7 @@ import Layout from './components/Layout';
 import Appointment from './components/Appointment';
 import MakeAppointment from './components/MakeAppointment';
 import Category from './components/Category';
+import ThankYou from './components/ThankYou';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/category" element={<Layout><Category /></Layout>} />
         <Route path="/appointment" element={<Layout><Appointment /></Layout>} />
         <Route path="/makeappointment" element={<Layout><MakeAppointment /></Layout>} />
+        <Route path="/thankyou" element={<Layout><ThankYou/></Layout>} />
 
       </Routes>
     </div>
