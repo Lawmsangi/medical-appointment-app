@@ -34,9 +34,9 @@ const Navbar = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        isClicked(false);
+        setIsClicked(false);
       } else {
-        isClicked(true);
+        setIsClicked(true);
       }
     };
 
