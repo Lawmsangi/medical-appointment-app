@@ -11,7 +11,7 @@ function ThankYou() {
       <div className="thankyou-container">
         <div className="thankyou-content">
             <h1>Thank You!</h1>
-            <p>Your appointment has been successfully booked.</p>
+            <p>Your appointment has been successfully booked.🥳🎉🎊</p>
         </div>
        <Confetti
         width={width}
@@ -19,7 +19,7 @@ function ThankYou() {
         />
 
         <div className="view-bookings">
-            <Link to="/appointment">View Booking</Link>
+            <Link to="/appointment" className='font-white'>View Booking</Link>
         </div>
     </div>
   )

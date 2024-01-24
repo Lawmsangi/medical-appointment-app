@@ -1,4 +1,6 @@
 .thankyou-container {
+    display: flex;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -17,13 +19,22 @@
 
 }
 
-h1 {
+.thankyou-content h1 {
     color: #41BA8D;
 }
 
-p {
-    color: #333;
-    margin-bottom: 20px;
+.view-bookings {
+    background-color: #41BA8D;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: none;
+}
+
+.view-bookings:hover {
+    background-color: #388569;
 }
 
 @keyframes slideInFromTop {
