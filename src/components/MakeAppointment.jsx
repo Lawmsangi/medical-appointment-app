@@ -35,6 +35,7 @@ function MakeAppointment() {
       image: doctor.image,
       date: JSON.stringify(selectedDate),
       time: selectedTime,
+      speciality: doctor.speciality,
     };
 
     // Dispatch action to add the appointment
