@@ -8,6 +8,10 @@
   color: #41BA8D;
 }
 
+.font-white {
+  color: #fff;
+}
+
 body {
   height: 100vh;
   font-family: "Cambria", sans-serif;
