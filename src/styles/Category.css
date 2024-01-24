@@ -50,3 +50,9 @@
     margin-left: 10px;
     color: #41BA8D;
 }
+
+@media screen and (max-width: 1262px) {
+    .categories-lists {
+        grid-template-columns: 1fr;
+    }
+}
