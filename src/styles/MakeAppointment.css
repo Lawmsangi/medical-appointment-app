@@ -95,24 +95,16 @@
     gap: 10px;
 }
 
-.schedules-date {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.date-picker {
-    padding: 5px;
-}
-
+.schedules-date,
 .schedules-time {
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
+.date-picker,
 .time-picker {
-    width: 170px
+    width: 100px;
 }
 
 input:focus {
