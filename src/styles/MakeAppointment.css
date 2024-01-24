@@ -3,7 +3,8 @@
     flex-direction: column;
    gap: 40px;
    color: #434444;
-   padding: 20px;
+   padding: 20px 20px 0 20px;
+   height: 100vh;
 }
 
 .make-appointment h1 {
@@ -130,9 +131,8 @@ button {
     border-radius: 5px;
     font-size: 1.5rem;
     cursor: pointer;
-    position: fixed;
-    bottom: 0;
-    width: 78%;
+    width: 100%;
+    margin-top: auto;
     margin-bottom: 5px;
 }
 
