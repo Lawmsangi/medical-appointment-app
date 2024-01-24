@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import doctor1 from '../assests/doctor-1.jpg'
 import doctor2 from '../assests/doctor-2.jpg'
 import doctor3 from '../assests/doctor-3.jpg'
@@ -17,20 +17,41 @@ function Home() {
     {name:'Dr. Peter Khan',speciality:'Brain Surgeon',image:doctor5, biography:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur incidunt ratione vero accusantium illum porro maxime sunt inventore, ducimus doloremque?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae minus nihil voluptatem impedit dolorum amet similique minima cupiditate consequatur quod.'}
   ];
 
-  const doctorsPerPage = 3;
-  const [currentPage,setCurrentPage] = useState(0);
+const doctorsPerPage = calculateDoctorsPerPage();
+const [currentPage, setCurrentPage] = useState(0);
 
-    const handleNextClick = () => {
-        const nextPage = currentPage + 1;
-        const totalPages = Math.ceil(doctors.length / doctorsPerPage);
+const handleNextClick = () => {
+    const nextPage = currentPage + 1;
+    const totalPages = Math.ceil(doctors.length / doctorsPerPage);
 
-        if (nextPage < totalPages) {
-          setCurrentPage(nextPage);
-        } else {
-          setCurrentPage(0); 
-        }
+    if (nextPage < totalPages) {
+        setCurrentPage(nextPage);
+    } else {
+        setCurrentPage(0);
+    }
+};
+
+useEffect(() => {
+    function handleResize() {
+        setCurrentPage(0);
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+        window.removeEventListener('resize', handleResize);
     };
+}, []);
 
+function calculateDoctorsPerPage() {
+    const windowWidth = window.innerWidth;
+     if (windowWidth < 600) {
+          return 1;
+        } else if (windowWidth < 900) {
+          return 2;
+        } else {
+          return 3;
+        }
+}
   const navigate = useNavigate();
   const handleAppointmentClick = (doctor) => {
     navigate('/makeappointment',{ state: { doctor } }); 
