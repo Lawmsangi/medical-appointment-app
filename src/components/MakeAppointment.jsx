@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../styles/MakeAppointment.css';
 import { IoCall } from 'react-icons/io5';
@@ -7,11 +7,24 @@ import { useDispatch } from 'react-redux';
 import { addAppointment } from '../redux/appointmentsSlice';
 
 function MakeAppointment() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const location = useLocation();
   const { state } = location;
   const doctor = state ? state.doctor : null;
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState('00:00');
+  const [existingAppointments, setExistingAppointments] = useState([]);
+
+  useEffect(() => {
+    const existingAppointmentsFromStorage = JSON.parse(localStorage.getItem('appointments')) || [];
+    setExistingAppointments(existingAppointmentsFromStorage);
+  }, []);
+
+   const saveAppointmentsToLocalStorage = (appointments) => {
+    localStorage.setItem('appointments', JSON.stringify(appointments));
+  };
+
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -21,25 +34,29 @@ function MakeAppointment() {
     setSelectedTime(time);
   };
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
   const formatDate = (date) => {
-    // Implement your date formatting logic here
     return date.toISOString().split('T')[0];
   };
 
   const formatTime = (time) => {
-    // Implement your time formatting logic here
     return time;
   };
 
   const getCurrentDate = () => {
-    // Implement your logic to get the current date
     return formatDate(new Date());
   };
 
-  const handleBookAppointment = () => {
+   const handleBookAppointment = () => {
+    const isAppointmentExists = existingAppointments.some(
+      (appointment) =>
+        appointment.date === formatDate(selectedDate) && appointment.time === selectedTime
+    );
+
+    if (isAppointmentExists) {
+      alert('Appointment at this date and time already exists!');
+      return;
+    }
+
     const newAppointment = {
       id: Math.floor(Math.random() * 1000) + 1,
       doctor: doctor.name,
@@ -49,10 +66,12 @@ function MakeAppointment() {
       speciality: doctor.speciality,
     };
 
-    // Dispatch action to add the appointment
+    setExistingAppointments([...existingAppointments, newAppointment]);
+
+    saveAppointmentsToLocalStorage([...existingAppointments, newAppointment]);
+
     dispatch(addAppointment(newAppointment));
 
-    // Redirect to the congratulations page
     navigate('/thankyou');
   };
 
