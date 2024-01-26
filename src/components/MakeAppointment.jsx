@@ -46,7 +46,7 @@ function MakeAppointment() {
     return formatDate(new Date());
   };
 
-   const handleBookAppointment = () => {
+  const handleBookAppointment = () => {
     const isAppointmentExists = existingAppointments.some(
       (appointment) =>
         appointment.date === formatDate(selectedDate) && appointment.time === selectedTime
