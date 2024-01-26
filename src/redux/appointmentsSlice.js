@@ -6,15 +6,31 @@ const initialState = {
   isLoading: true,
 };
 
+const loadAppointmentsFromLocalStorage = () => {
+  const existingAppointmentsFromStorage = JSON.parse(localStorage.getItem('appointments')) || [];
+  return existingAppointmentsFromStorage;
+};
+
+const saveAppointmentsToLocalStorage = (appointments) => {
+  localStorage.setItem('appointments', JSON.stringify(appointments));
+};
+
 const appointmentsSlice = createSlice({
   name: 'appointments',
-  initialState,
-   reducers: {
-    addAppointment: (state,action) => {
-      state.appointments.push(action.payload)
+  initialState: {
+    ...initialState,
+    appointments: loadAppointmentsFromLocalStorage(),
+  },
+  reducers: {
+    addAppointment: (state, action) => {
+      state.appointments.push(action.payload);
+      saveAppointmentsToLocalStorage(state.appointments);
     },
-    removeAppointment: (state,action) => {
-      state.appointments = state.appointments.filter(appointment => appointment.id !== action.payload)
+    removeAppointment: (state, action) => {
+      state.appointments = state.appointments.filter(
+        (appointment) => appointment.id !== action.payload
+      );
+      saveAppointmentsToLocalStorage(state.appointments);
     },
   },
 });
