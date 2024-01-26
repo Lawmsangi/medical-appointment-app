@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Appointment.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeAppointment } from '../redux/appointmentsSlice'
+import { Link } from 'react-router-dom';
 
 function Appointment() {
   const appointments = useSelector((store) => store.appointmentsStore.appointments)
@@ -15,7 +16,12 @@ function Appointment() {
       </div>
       <div className="appointment-content">
         {appointments.length === 0 ? (
-          <p>No appointments</p>
+          <div className='no-appointments'>
+            <p>No appointments</p>
+            <div className="view-bookings">
+             <Link to="/" className='font-white'>Book Appointment Now</Link>
+            </div>
+         </div>
         ) : (
           appointments.map((appointment) => (
             <div key={appointment.id} className='appointment-card'>
