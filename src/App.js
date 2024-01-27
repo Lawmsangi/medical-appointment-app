@@ -10,7 +10,7 @@ import Login from './components/Login';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Routes>
         <Route path="/" element={<Layout><Home /></Layout>} />
         <Route path="/category" element={<Layout><Category /></Layout>} />
