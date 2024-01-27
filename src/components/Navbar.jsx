@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import '../styles/Navbar.css';
-import { NavLink } from 'react-router-dom';
+import iconLogo from '../assests/icon-logo.png'
+import { Link,NavLink } from 'react-router-dom';
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { TiSocialGooglePlus } from "react-icons/ti";
@@ -10,6 +11,7 @@ import { FaUserDoctor } from "react-icons/fa6";
 import { BiCategory } from "react-icons/bi";
 import { MdOutlineMedicalServices } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
+import { CiLogout } from "react-icons/ci";
 
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -54,7 +56,9 @@ const Navbar = () => {
 
       <div className='menu' style={dynamicStyles}>
         <div className="nav-header">
-        <h1 className='color-blue'>HealHub</h1>
+        <Link to="/" className="logo">
+            <img src={iconLogo} alt="icon-logo" />
+          </Link>
       </div>
 
       <ul className='nav-categories' onClick={closeSidebar}>
@@ -71,6 +75,11 @@ const Navbar = () => {
         <li>
           <NavLink to="/appointment" className="icon-link">
             <MdOutlineMedicalServices />My Appointments
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/login" className="icon-link">
+            <CiLogout />Logout
           </NavLink>
         </li>
       </ul>
