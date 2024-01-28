@@ -9,10 +9,15 @@
 
 .doctors-card {
     display: flex;
-    gap: 10px;
+    gap: 30px;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    
+}
+
+.doctor-info h3 {
+    font-size: 1.2rem;
 }
 
 .image-lists {
@@ -40,6 +45,7 @@
 .next-icon {
     font-size: 2.3rem;
     cursor: pointer;
+    color: #41BA8D;
 }
 
 .doctor-card img {

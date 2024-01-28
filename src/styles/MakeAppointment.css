@@ -38,14 +38,15 @@
 }
 
 .doctor-info h3 {
-    font-size: 2rem;
-    font-weight: 900;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #505254;
 }
 
 .doctor-info p {
     font-size: 1rem;
     font-weight: 900;
-    color: #A6A8AA;
+    color: #7e8184;
 }
 
 .appointment-icons {
@@ -77,10 +78,6 @@
 .call-icon:hover,
 .email-icon:hover {
     transform: scale(1.2);
-}
-
-.call-icon:hover {
-    animation: ring 0.5s ease-in-out infinite;
 }
 
 .biography {
@@ -130,27 +127,4 @@ button {
 
 .book-btn:hover {
     background-color: #3b9d93;
-}
-
-
-@keyframes ring {
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    10%,
-    30%,
-    50%,
-    70%,
-    90% {
-        transform: translateY(-3px) rotate(3deg);
-    }
-
-    20%,
-    40%,
-    60%,
-    80% {
-        transform: translateY(3px) rotate(-3deg);
-    }
 }
